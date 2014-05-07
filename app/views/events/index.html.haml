@@ -1,0 +1,15 @@
+- content_for(:title, 'Events')
+
+- @events.each do |event|
+	.container
+		.row
+			.col-md-12
+				.col-md-6
+					%h5 Event Name:  #{event.name}
+					%h5 Description:  #{event.description}
+					= button_to 'Edit Event', edit_event_path(event), method: "get", :class => "btn btn-xs btn-success"
+					= button_to 'Delete Event', event, method: "delete", :class => "btn btn-xs btn-danger", :data => { :confirm => "Are you sure you want to delete?" }
+					%br
+					%br		
+				.col-md-6
+					%h3 My Comments

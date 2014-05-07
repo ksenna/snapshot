@@ -1,0 +1,15 @@
+- content_for(:title, 'Update Profile')
+
+.container
+	%legend Update Your Profile
+	= form_for @user, url: user_path do |f|
+		= f.label :name
+		= f.text_field :name
+		%br
+		= f.label :email
+		= f.text_field :email
+		%br
+		Password:
+		= f.password_field :password_digest
+		%br
+		= f.submit "Submit Changes"

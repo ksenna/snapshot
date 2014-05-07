@@ -1,0 +1,9 @@
+.navbar.navbar-fixed-top.navbar-inverse
+	.navbar-inner
+		.container
+			%nav
+				= image_tag "SnapShotbw.jpg"
+				%ul.nav.navbar-nav.pull-right
+					%li= link_to "Home",    '#'
+					%li= link_to "Sign in", login_path
+					%li= link_to "Sign up", logout_path

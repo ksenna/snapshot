@@ -1,0 +1,13 @@
+- content_for(:title, 'Create A New Event')
+
+.container
+	.col-md-6
+		%h1 New Event
+
+		= form_for @new_event do |f|
+			= render "form", f: f
+			= f.fields_for :tags do |ff|
+				Add a tag:
+				= ff.text_field :name
+			= f.submit
+		%br

@@ -1,0 +1,14 @@
+.container
+	.col-md-12
+		%h6.col.md-4
+		= form_for @new_photo, url: photos_path do |f|
+			= f.label :name
+			= f.text_field :name
+			%br
+			= f.label :description
+			= f.text_field :description
+			%br
+			Upload Image:
+			= f.file_field :user_image
+			%br
+			= f.submit "Add Photo"

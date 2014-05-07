@@ -1,0 +1,21 @@
+- content_for(:title, 'Your Profile')
+
+- @users.each do |user|
+	.container
+		.row
+			.col-md-12
+				.col-md-6
+					%h3 Profile for #{user.name}
+					%h5 Name:  #{user.name}
+					%h5 Email:  #{user.email}
+					= button_to 'Edit Profile', edit_user_path(user), method: "get", :class => "btn btn-xs btn-success"
+					= button_to 'Delete Profile', user, method: "delete", :class => "btn btn-xs btn-danger", :data => { :confirm => "Are you sure you want to delete?" }
+					%br
+					%br		
+				.col-md-6
+					%h3 My Comments:
+		.row
+			.col-md-12
+				%h3 My Photos
+				= render :template => 'photos/index'
+		%br
