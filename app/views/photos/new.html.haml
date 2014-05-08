@@ -11,4 +11,8 @@
 			Upload Image:
 			= f.file_field :user_image
 			%br
+			= f.fields_for :tags do |f|
+				Add A Tag:
+				= f.text_field :name
+			%br
 			= f.submit "Add Photo"

@@ -1,10 +1,5 @@
 class TagsController < ApplicationController
 
-  def index
-    @photo = Photo.find(params[:id])
-    @tags = Photo.find(params[:id])
-  end
-
   def new
     @new_tag = Tag.new(tag_params)
 
