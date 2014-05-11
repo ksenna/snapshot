@@ -34,8 +34,8 @@ class PhotosController < ApplicationController
 		# else
 		# 	redirect_to photos_path
 		# end
-		@tags = @photo.tags
-		@tag = Tag.new
+		#@tags = @photo.tags
+		#@tag = Tag.new
 	end
 
 	def destroy

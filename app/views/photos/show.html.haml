@@ -1,22 +1,19 @@
 - content_for(:title, 'Your Photo')
-
 .container
 	.row
 		.col-md-12
-
 		%h3= @photo.name
 		%br
-		%h4 Description:
-		= @photo.description
-		%br
-		= @photo.tags.name
+		Description:
+		%h4= @photo.description
 		%br
 		= image_tag @photo.user_image.url, width: 550, height: 550
 		%br
 		= link_to "Edit Photo", edit_photo_path, :class => "btn btn-success"
 		%br
+		Tags:
+
 		%br
-.container
 	.row
 		.col-md-12
 		= form_for @new_comment, url: comments_path, method: :post do |f|
@@ -27,3 +24,5 @@
 		%br
 		- @photo.comments.each do |c|
 			%h4{ :style => "text-align:center" }= c.content
+			%h4{ :style => "text-align:center" }= c.user_id
+
