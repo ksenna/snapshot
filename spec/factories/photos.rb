@@ -1,8 +1,8 @@
-
+require 'faker'
 
 FactoryGirl.define do
-	factory :photo do |f|
-		f.name "Test Photo"
-		f.description "Test Photo's Description"
+	factory :photo do
+		name { Faker::Name.first_name }
+		description { Faker::Lorem.paragraph }
 	end
 end

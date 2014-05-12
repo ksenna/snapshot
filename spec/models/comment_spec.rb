@@ -1,0 +1,1 @@
+requrie 'spec_helper'
