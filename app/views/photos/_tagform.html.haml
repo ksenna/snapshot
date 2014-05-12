@@ -1,0 +1,10 @@
+= form_for @new_tag do |nt|
+	= nt.label "Photo Tags"
+	= nt.text_field :name
+	= nt.hidden_field :photo_id, value: @photo.id
+	= nt.submit "Tag Photo"
+	%br
+	%br
+	Image Tags For This Photo:
+	- @photo.tags.uniq.each do |tagname|
+		= tagname.name

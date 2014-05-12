@@ -1,1 +1,1 @@
-requrie 'spec_helper'
+# requrie 'spec_helper'

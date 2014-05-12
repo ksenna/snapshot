@@ -66,10 +66,20 @@ class PhotosController < ApplicationController
 		send_file file.path
 	end
 
+	def post_tag
+		@new_tag = Tag.new
+		@photo = Photo.find(params[:id])
+	end
+
+	def display_tag
+		@photo = Photo.find(params[:id])
+		@new_tag = @photo.tags.build
+	end
+
 	private
 
 	def photo_params
-		params.require(:photo).permit(:name, :description, :user_image, comments_attributes: [:user_id, :content], tags_attributes: [:id, :name])
+		params.require(:photo).permit(:name, :description, :user_image, comments_attributes: [:user_id, :content], tags_attributes: [:photo_id, :name])
 	end
 
 end
