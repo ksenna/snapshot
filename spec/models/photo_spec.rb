@@ -22,7 +22,7 @@ describe Photo do
 # end
 
 	describe 'get show' do
-		it 'should assign event to @photo' do
+		it 'should assign photo to @photo' do
 			photo = FactoryGirl.create(:photo)
 			get :show, id: photo.id
 			#@event.should_not be(nil)
@@ -34,8 +34,8 @@ describe Photo do
 		it 'should update photo' do
 			#photo = Photo.create
 			photo = FactoryGirl.create(:photo)
-			put :update, id: photo.id, photo:{ name: "Home Sweet Home"}
-			assigns(:photo).name.should eq("Classroom")
+			put :update, id: photo.id, photo:{name: "Home Sweet Home"}
+			assigns(:photo).name.should eq("Home Sweet Home")
 		end
 	end
 end
